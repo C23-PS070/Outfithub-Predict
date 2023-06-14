@@ -2,8 +2,8 @@ from flask import Flask, jsonify, request
 from utilities import predict_pipeline
 from google.cloud import storage
 from werkzeug.utils import secure_filename
-import json
-import uuid
+from PIL import Image
+import json, uuid, io, os, mimetypes
 
 app = Flask(__name__)
 
@@ -35,11 +35,22 @@ def upload():
           if image.filename == '':
                return jsonify({'error': 'No image selected', 'status': 'Failed'}), 400
 
+          image_jpg = Image.open(image)
+          image_jpg = image_jpg.convert('RGB')
+
           filename = secure_filename(image.filename)
-          filename = str(uuid.uuid4()) + '.' + image.filename.rsplit('.', 1)[1]
+          filename = str(uuid.uuid4()) + '.jpg'
+
+          image_buffer = io.BytesIO()
+          image_jpg.save(image_buffer, format='JPEG')
+          image_buffer.seek(0)
 
           blob = storage_client.bucket(bucket_name).blob(filename)
-          blob.upload_from_file(image)
+
+          content_type = mimetypes.guess_type(filename)[0]
+          if not content_type or content_type not in ['image/jpeg', 'image/png']:
+               content_type = 'image/jpeg'
+          blob.upload_from_file(image_buffer, content_type=content_type)
 
           image_url = blob.public_url
 
