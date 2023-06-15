@@ -57,7 +57,7 @@ def upload():
           return jsonify({"image_url": image_url}), 200
 
      except Exception as e:
-          return jsonify({'error': 'Connection failed: ' + str(e), 'status': 'Failed'}), 500
+          return jsonify({'error': 'Image upload failed: ' + str(e), 'status': 'Failed'}), 500
 
 if __name__ == "__main__":
      app.run(debug=True)
