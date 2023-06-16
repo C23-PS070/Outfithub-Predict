@@ -39,8 +39,9 @@ def predict_pipeline(inputs):
         hm2 = {}
         similar_item = []
         for j in range(7):
-                similar_item.append({"id":df.loc[index[0][j],"filename"].replace("images/","transparent_"),
-                "link":"https://storage.googleapis.com/image_outfithub/transparent_"+df.loc[index[0][j], "filename"].split(".")[0]+".png"
-            })
+                similar_item.append({
+                    "id":df.loc[index[0][j], "filename"].replace("images/", "transparent_"),
+                    "link":"https://storage.googleapis.com/image_outfithub/transparent_"+df.loc[index[0][j], "filename"].replace("images/", "").split(".")[0]+".png"
+                })
         hm[f"{category[count]}"] = similar_item
     return hm
