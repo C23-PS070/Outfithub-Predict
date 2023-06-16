@@ -8,7 +8,7 @@ import json, uuid, io, os, mimetypes
 app = Flask(__name__)
 
 storage_client = storage.Client.from_service_account_json(PATH_TO_CREDENTIAL)
-bucket_name = 'upload_outfithub'
+bucket_name = BUCKET_NAME
 
 @app.route('/', methods=["GET"])
 def root():
