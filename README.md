@@ -1,6 +1,6 @@
 <div align="center">
 
-# OutfitHub Predict
+# Outfithub Predict
 
 </div>
 
