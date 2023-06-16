@@ -1,8 +1,17 @@
 <div align="center">
 
 # OutfitHub Predict
+  
+<br>
 
+<img src="https://i.ibb.co/wrvmzjH/logooutfithub-1.png" width="120px"/>
+  
 </div>
+
+<br>
+
+## Description
+"OutfitHub" revolutionizes the way people approach fashion by providing a virtual platform for them to explore and create their own style based on their preference. Whether you're a fashion enthusiast, trendsetter, or someone looking to enhance their personal style, this app is your go-to companion.
 
 <br>
 
