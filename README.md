@@ -25,7 +25,7 @@
   ```bash
   cd Outfithub-Predict
   ```
-  _Note: You must change the PATH_TO_BUCKET and BUCKET_NAME in the app.py file according to what you have created._
+  _Note: You must change the ```PATH_TO_CREDENTIAL``` and ```BUCKET_NAME``` in the app.py file according to what you have created._
   
 * Install the packages:
   ```bash
@@ -52,23 +52,23 @@
   cd Outfithub-Predict
   ```
   
-  _Note: Make sure you have created a credentials.json from a service account that has permission to access Google Cloud Storage.You must also change the PATH_TO_BUCKET and BUCKET_NAME in the app.py file according to what you have created using the Cloud Shell Editor or other text editor._
+  _Note: Make sure you have created a credentials.json from a service account that has permission to access Google Cloud Storage.You must also change the ```PATH_TO_CREDENTIAL``` and ```BUCKET_NAME``` in the app.py file according to what you have created using the Cloud Shell Editor or other text editor._
   
 * Build an image:
   ```bash
   gcloud builds submit --tag gcr.io/PROJECT_ID/IMAGE_NAME
   ```
   
-   _Note: You must change the PROJECT_ID and IMAGE_NAME according to what you want to create._
+   _Note: You must change the ```PROJECT_ID``` and ```IMAGE_NAME``` according to what you want to create._
  
 * Make sure the image that has been created is running properly:
   ```bash
    docker run -p 8080:8080 IMAGE_NAME
   ```
   
-  _Notes: You must change the IMAGE_NAME according to the image you have created._
+  _Notes: You must change the ```IMAGE_NAME``` according to the image you have created._
   
-* Deploy a Cloud Run service
+* Deploy a Cloud Run service:
   ```bash
   gcloud run deploy SERVICE_NAME \
   --image IMAGE_NAME \
@@ -77,7 +77,7 @@
   --allow-unauthenticated \
   ```
   
-   _Notes: You must change the SERVICE_NAME, IMAGE_NAME and REGION according to what you want to create._
+   _Notes: You must change the ```SERVICE_NAME```, ```IMAGE_NAME``` and ```REGION``` according to what you want to create._
 
 * Perform the test using the deployed link.
 
