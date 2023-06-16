@@ -91,7 +91,7 @@
 <br>
 
 ## Usage
-If the server is already running, you can check our <a href="https://documenter.getpostman.com/">API Documentation</a> for more details and test it with Postman.
+If the server is already running, you can check our <a href="https://documenter.getpostman.com/view/27909743/2s93shz9gL">API Documentation</a> for more details and test it with Postman.
 
 <br>
 
