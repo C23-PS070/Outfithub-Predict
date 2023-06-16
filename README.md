@@ -8,48 +8,74 @@
 
 ## Get Started
 ### Prerequisites
- * Download and install <a href="https://www.python.org/downloads/release/python-395/">Python v3.9.5<a/> <br>
+* Download and install <a href="https://www.python.org/downloads/release/python-395/">Python v3.9.5<a/> <br>
   Make sure your Node.js and npm are installed:
   ```bash
   python --version
   pip --version
   ```
-  * Have a Google Cloud Platform account if you want to deploy using GCP.
+* Have a Google Cloud Platform account if you want to deploy using GCP.
 
 ### Local Installation
 * Clone the repository using git:
   ```bash
   git clone https://github.com/C23-PS070/Outfithub-Predict.git
   ```
-  * Move to project folder:
+* Move to project folder:
   ```bash
   cd Outfithub-Predict
   ```
-  * Install the packages:
+* Install the packages:
   ```bash
   pip install
   ``` 
-  * Run the server:
+* Run the server:
   ```bash
   python app.py
   ``` 
 
 ### Dataset
- * The dataset we use is the <a href="https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset?datasetId=139630&sortBy=voteCount">Fashion Product Images Dataset<a/> sourced from Kaggle.
- * Extract and upload all <a href="https://drive.google.com/drive/folders/1oQb1LImUCdB-wrDUD6KGnBc6f3OntM9s">processing results<a/> to Google Cloud Storage.
-   _Note: Make sure you have created a Bucket in Google Cloud Storage._
+* The dataset we use is the <a href="https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset?datasetId=139630&sortBy=voteCount">Fashion Product Images Dataset<a/> sourced from Kaggle.
+* Extract and upload all <a href="https://drive.google.com/drive/folders/1oQb1LImUCdB-wrDUD6KGnBc6f3OntM9s">processing results<a/> to Google Cloud Storage.
+  
+  _Note: Make sure you have created a Bucket in Google Cloud Storage._
   
 ### Deployment
-  * Clone the repository using git:
+* Clone the repository using git:
    ```bash
   git clone https://github.com/C23-PS070/Outfithub-Predict.git
   ```
-  * Move to project folder:
+* Move to project folder:
   ```bash
   cd Outfithub-Predict
   ```
-  * 
-   _Note: Make sure you have created a credentials.json from a service account that has permission to access Google Cloud Storage._
+  
+  _Note: Make sure you have created a credentials.json from a service account that has permission to access Google Cloud Storage.You must also change the PATH_TO_BUCKET and BUCKET_NAME in the app.py file according to what you have created using the Cloud Shell Editor or other text editor._
+  
+* Build an image:
+  ```bash
+  gcloud builds submit --tag gcr.io/PROJECT_ID/IMAGE_NAME
+  ```
+  
+   _Note: You must change the PROJECT_ID and IMAGE_NAME according to what you want to create._
+ 
+* Make sure the image that has been created is running properly:
+  ```bash
+   docker run -p 8080:8080 IMAGE_NAME
+  ```
+  
+  _Notes: You must change the IMAGE_NAME according to the image you have created._
+  
+* Deploy a Cloud Run service
+  ```bash
+  gcloud run deploy SERVICE_NAME \
+  --image IMAGE_NAME \
+  --platform managed \
+  --region REGION \
+  --allow-unauthenticated \
+  ```
+  
+   _Notes: You must change the SERVICE_NAME, IMAGE_NAME and REGION according to what you want to create._
   
 
 <br>
