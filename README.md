@@ -25,6 +25,8 @@
   ```bash
   cd Outfithub-Predict
   ```
+  _Note: You must change the PATH_TO_BUCKET and BUCKET_NAME in the app.py file according to what you have created._
+  
 * Install the packages:
   ```bash
   pip install
