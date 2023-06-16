@@ -1,7 +1,14 @@
 <div align="center">
 
-# Outfithub Predict
+# OutfitHub Predict
 
+</div>
+
+<br>
+
+## Architecture
+<div align="center">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPc6nTxRF3mr0tb1b_GZJrFNSSn2LG7pY5pV7uvqBVh2lXtcUhV5GNsZsCpaUGIYO2Ww8xOKZhLX4tutI1yKss-eSFjKJqZaGSEVsmfzXlerRMawScuI8UxMcddfkljPARVDAteZ7ri2y0KB1KPtz8sVJV_F4lRDmfLTJKwTLizQNcRbVlfmHxL5u4yg/s320/Untitled-2023-06-16-1707.png"/>
 </div>
 
 <br>
