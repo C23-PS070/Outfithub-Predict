@@ -9,7 +9,7 @@
 ## Get Started
 ### Prerequisites
 * Download and install <a href="https://www.python.org/downloads/release/python-395/">Python v3.9.5<a/> <br>
-  Make sure your Node.js and npm are installed:
+  Make sure your Python and pip are installed:
   ```bash
   python --version
   pip --version
@@ -76,7 +76,8 @@
   ```
   
    _Notes: You must change the SERVICE_NAME, IMAGE_NAME and REGION according to what you want to create._
-  
+
+* Perform the test using the deployed link.
 
 <br>
 
